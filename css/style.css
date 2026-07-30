@@ -164,15 +164,11 @@ body{
 
 .hero{
 
-    min-height:90vh;
+    min-height:70vh;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
-
-    padding:40px;
 
 }
 
