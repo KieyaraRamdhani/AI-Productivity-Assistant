@@ -9,350 +9,321 @@
 
     <title>Nemo | Dashboard</title>
 
-    <!-- Favicon -->
     <link rel="icon" href="Assets/images/nemo_logo.png">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Three.js -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 </head>
 
 <body>
 
-    <!-- Animated Background -->
-    <div id="bg"></div>
+<div id="bg"></div>
+<div class="overlay"></div>
 
-    <div class="overlay"></div>
+<div class="ocean">
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+</div>
 
-    <div class="ocean">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
+<div class="skyline"></div>
 
-    <div class="skyline"></div>
+<header>
 
-    <!-- ================= NAVIGATION ================= -->
+<nav class="navbar">
 
-    <header>
+<div class="logo">
 
-        <nav class="navbar">
+<img src="Assets/images/nemo_logo.png" alt="Nemo">
 
-            <div class="logo">
+<h2>Nemo</h2>
 
-                <img src="Assets/images/nemo_logo.png" alt="Nemo Logo">
+</div>
 
-                <h2>Nemo</h2>
+<ul class="nav-links">
 
-            </div>
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="dashboard.html" class="active">
+<i class="fa-solid fa-gauge-high"></i>
+Dashboard
+</a></li>
 
-            <ul class="nav-links">
+</ul>
 
-                <li><a href="index.html">Home</a></li>
+</nav>
 
-                <li><a href="features.html">Features</a></li>
+</header>
 
-                <li><a href="about.html">About</a></li>
+<main class="dashboard">
 
-                <li><a href="contact.html">Contact</a></li>
+<!-- HERO -->
 
-                <li>
+<section class="dashboard-header">
 
-                    <a href="dashboard.html" class="active">
+<div class="glass">
 
-                        <i class="fa-solid fa-gauge-high"></i>
+<span class="badge">
+<i class="fa-solid fa-sparkles"></i>
+AI Workspace
+</span>
 
-                        Dashboard
+<h1>Welcome Back</h1>
 
-                    </a>
+<p>
 
-                </li>
+Choose an AI application below to automate repetitive work,
+increase productivity and collaborate with Nemo.
 
-            </ul>
+</p>
 
-        </nav>
+</div>
 
-    </header>
+</section>
 
-    <!-- ================= MAIN DASHBOARD ================= -->
+<!-- STATS -->
 
-    <main class="dashboard">
+<section class="dashboard-stats">
 
-        <!-- Dashboard Hero -->
+<div class="stat-card">
 
-        <section class="dashboard-header">
+<i class="fa-solid fa-bolt"></i>
 
-            <div class="glass">
+<h2 id="requests">247</h2>
 
-                <span class="badge">
+<p>AI Requests</p>
 
-                    <i class="fa-solid fa-user"></i>
+</div>
 
-                    Welcome Back
+<div class="stat-card">
 
-                </span>
+<i class="fa-solid fa-check-circle"></i>
 
-                <h1>Your AI Workspace</h1>
+<h2 id="tasks">193</h2>
 
-                <p>
+<p>Tasks Completed</p>
 
-                    Select an AI application below to streamline your workflow.
-                    Generate emails, organise schedules, summarise meetings,
-                    research topics and improve workplace productivity—all in one place.
+</div>
 
-                </p>
+<div class="stat-card">
 
-            </div>
+<i class="fa-solid fa-chart-line"></i>
 
-        </section>
+<h2>98%</h2>
 
-        <!-- ================= DASHBOARD OVERVIEW ================= -->
+<p>Efficiency</p>
 
-        <section class="dashboard-overview">
+</div>
 
-            <div class="dashboard-stats">
+<div class="stat-card">
 
-                <div class="stat-card">
+<i class="fa-solid fa-stopwatch"></i>
 
-                    <i class="fa-solid fa-bolt"></i>
+<h2>1.2s</h2>
 
-                    <h2 id="requests">0</h2>
+<p>Avg Response</p>
 
-                    <p>AI Requests</p>
+</div>
 
-                </div>
+</section>
 
-                <div class="stat-card">
+<!-- ANALYTICS -->
 
-                    <i class="fa-solid fa-check-circle"></i>
+<section class="analytics-grid">
 
-                    <h2 id="tasks">0</h2>
+<div class="chart-card">
 
-                    <p>Tasks Completed</p>
+<h3>
+<i class="fa-solid fa-chart-column"></i>
+Weekly Usage
+</h3>
 
-                </div>
+<canvas id="usageChart" width="250" height="140"></canvas>
 
-                <div class="stat-card">
+</div>
 
-                    <i class="fa-solid fa-gauge-high"></i>
+<div class="activity-card">
 
-                    <h2>98%</h2>
+<h3>
 
-                    <p>Productivity Score</p>
+<i class="fa-solid fa-wave-square"></i>
 
-                </div>
+Live Activity
 
-                <div class="stat-card">
+</h3>
 
-                    <i class="fa-solid fa-stopwatch"></i>
+<div class="status-item">
 
-                    <h2>1.2s</h2>
+<span class="pulse"></span>
 
-                    <p>Average Response</p>
+Generating Smart Email...
 
-                </div>
+</div>
 
-            </div>
+<div class="status-item">
 
-            <div class="analytics-grid">
+<span class="pulse"></span>
 
-                <!-- Usage Graph -->
+Summarising Meeting...
 
-                <div class="chart-card">
+</div>
 
-                    <h2>
+<div class="status-item">
 
-                        <i class="fa-solid fa-chart-line"></i>
+<span class="pulse"></span>
 
-                        Weekly AI Usage
+Research Complete
 
-                    </h2>
+</div>
 
-                    <canvas id="usageChart"></canvas>
+<div class="status-item">
 
-                </div>
+<span class="pulse"></span>
 
-                <!-- Live Activity -->
+AI Assistant Ready
 
-                <div class="activity-card">
+</div>
 
-                    <h2>
+</div>
 
-                        <i class="fa-solid fa-wave-square"></i>
+</section>
 
-                        Live AI Activity
+<!-- APPLICATIONS -->
 
-                    </h2>
+<section class="dashboard-tools">
 
-                    <div id="liveStatus">
+<h2>Applications</h2>
 
-                        <div class="status-item">
+<div class="dashboard-grid">
 
-                            <span class="pulse"></span>
+<a href="apps/email.html" class="dashboard-card">
 
-                            Waiting for requests...
+<img src="Assets/images/email.png" alt="Email">
 
-                        </div>
+<h3>Smart Emails</h3>
 
-                    </div>
+<p>Create business emails instantly.</p>
 
-                </div>
+</a>
 
-            </div>
+<a href="apps/schedule.html" class="dashboard-card">
 
-        </section>
+<img src="Assets/images/calendar.png" alt="Schedule">
 
-        <!-- ================= APPLICATIONS ================= -->
+<h3>Schedule Planner</h3>
 
-        <section class="dashboard-tools">
+<p>Manage meetings and deadlines.</p>
 
-            <h2>Choose an AI Tool</h2>
+</a>
 
-            <div class="dashboard-grid">
+<a href="apps/assistant.html" class="dashboard-card">
 
-                <a href="apps/email.html" class="dashboard-card">
+<img src="Assets/images/assistant.png" alt="Assistant">
 
-                    <i class="fa-solid fa-envelope-circle-check"></i>
+<h3>AI Assistant</h3>
 
-                    <h3>Smart Emails</h3>
+<p>Your intelligent workplace chatbot.</p>
 
-                    <p>Create professional emails instantly.</p>
+</a>
 
-                </a>
+<a href="apps/notes.html" class="dashboard-card">
 
-                <a href="apps/schedule.html" class="dashboard-card">
+<img src="Assets/images/meeting.png" alt="Meeting">
 
-                    <i class="fa-solid fa-calendar-days"></i>
+<h3>Meeting Notes</h3>
 
-                    <h3>Schedule Planner</h3>
+<p>Summarise meetings automatically.</p>
 
-                    <p>Organise meetings and daily tasks.</p>
+</a>
 
-                </a>
+<a href="apps/research.html" class="dashboard-card">
 
-                <a href="apps/assistant.html" class="dashboard-card">
+<img src="Assets/images/research.png" alt="Research">
 
-                    <i class="fa-solid fa-robot"></i>
+<h3>Research</h3>
 
-                    <h3>AI Assistant</h3>
+<p>Generate reports and insights.</p>
 
-                    <p>Chat with Nemo's intelligent assistant.</p>
+</a>
 
-                </a>
+<a href="apps/productivity.html" class="dashboard-card">
 
-                <a href="apps/notes.html" class="dashboard-card">
+<img src="Assets/images/productivity.png" alt="Productivity">
 
-                    <i class="fa-solid fa-file-lines"></i>
+<h3>Productivity</h3>
 
-                    <h3>Meeting Notes</h3>
+<p>Monitor workplace performance.</p>
 
-                    <p>Summarise meetings into clear action items.</p>
+</a>
 
-                </a>
+</div>
 
-                <a href="apps/research.html" class="dashboard-card">
+</section>
 
-                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+<!-- RESPONSIBLE AI -->
 
-                    <h3>Research</h3>
+<section class="responsible-ai glass">
 
-                    <p>Generate research summaries and insights.</p>
+<i class="fa-solid fa-shield-halved"></i>
 
-                </a>
+<h2>Responsible AI</h2>
 
-                <a href="apps/productivity.html" class="dashboard-card">
+<p>
 
-                    <i class="fa-solid fa-chart-line"></i>
+AI-generated responses may contain inaccuracies.
+Always verify important information before making
+business, legal or financial decisions.
 
-                    <h3>Productivity</h3>
+</p>
 
-                    <p>Track goals and improve performance.</p>
+</section>
 
-                </a>
+</main>
 
-            </div>
+<footer>
 
-        </section>
+<div class="footer-content">
 
-        <!-- ================= RESPONSIBLE AI ================= -->
+<div>
 
-        <section class="responsible-ai">
+<h3>Nemo</h3>
 
-            <i class="fa-solid fa-shield-halved"></i>
+<p>AI Workplace Productivity Assistant</p>
 
-            <h2>Responsible AI</h2>
+</div>
 
-            <p>
+<div class="socials">
 
-                Nemo uses Artificial Intelligence to assist workplace productivity.
-                Always review AI-generated content before making important business,
-                financial, legal or professional decisions.
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fa-solid fa-envelope"></i></a>
 
-            </p>
+</div>
 
-        </section>
+</div>
 
-    </main>
+<hr>
 
-    <!-- ================= FOOTER ================= -->
+<p>
 
-    <footer>
+© 2026 Kieyara Ramdhani. All Rights Reserved.
 
-        <div class="footer-content">
+</p>
 
-            <div>
+</footer>
 
-                <h3>Nemo</h3>
-
-                <p>
-
-                    AI-powered workplace productivity assistant.
-
-                </p>
-
-            </div>
-
-            <div class="socials">
-
-                <a href="#"><i class="fab fa-github"></i></a>
-
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-
-                <a href="#"><i class="fa-solid fa-envelope"></i></a>
-
-            </div>
-
-        </div>
-
-        <hr>
-
-        <p>
-
-            © 2026 Kieyara Ramdhani. All Rights Reserved.
-
-        </p>
-
-    </footer>
-
-    <!-- JavaScript -->
-
-    <script src="js/background.js"></script>
-
-    <script src="js/main.js"></script>
-    <script src="js/dashboard.js"></script>
+<script src="js/background.js"></script>
+<script src="js/dashboard.js"></script>
 
 </body>
 
