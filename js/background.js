@@ -1,6 +1,6 @@
-
-// THREE.JS SCENE
-
+/* ==========================================
+   NEMO AI BACKGROUND
+========================================== */
 
 const scene = new THREE.Scene();
 
@@ -24,8 +24,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.getElementById("bg").appendChild(renderer.domElement);
 
-// PARTICLES
-
+/* ==========================================
+   PARTICLES
+========================================== */
 
 const particleCount = 1800;
 
@@ -36,23 +37,16 @@ const positions = [];
 for (let i = 0; i < particleCount; i++) {
 
     positions.push(
-
         (Math.random() - 0.5) * 220,
-
-        (Math.random() - 0.5) * 120,
-
-        (Math.random() - 0.5) * 120
-
+        (Math.random() - 0.5) * 140,
+        (Math.random() - 0.5) * 140
     );
 
 }
 
 geometry.setAttribute(
-
     "position",
-
     new THREE.Float32BufferAttribute(positions, 3)
-
 );
 
 const material = new THREE.PointsMaterial({
@@ -68,20 +62,17 @@ const material = new THREE.PointsMaterial({
 });
 
 const particles = new THREE.Points(
-
     geometry,
-
     material
-
 );
 
 scene.add(particles);
 
+/* ==========================================
+   AI NODES
+========================================== */
 
-// AI NODES
-
-
-const nodeGeometry = new THREE.SphereGeometry(0.35, 16, 16);
+const nodeGeometry = new THREE.SphereGeometry(0.4, 16, 16);
 
 const nodeMaterial = new THREE.MeshBasicMaterial({
 
@@ -94,20 +85,15 @@ const nodes = [];
 for (let i = 0; i < 25; i++) {
 
     const node = new THREE.Mesh(
-
         nodeGeometry,
-
         nodeMaterial
-
     );
 
     node.position.set(
 
         (Math.random() - 0.5) * 90,
-
-        (Math.random() - 0.5) * 45,
-
-        (Math.random() - 0.5) * 45
+        (Math.random() - 0.5) * 50,
+        (Math.random() - 0.5) * 50
 
     );
 
@@ -117,9 +103,9 @@ for (let i = 0; i < 25; i++) {
 
 }
 
-
-// CONNECTING LINES
-
+/* ==========================================
+   CONNECTING LINES
+========================================== */
 
 const lineMaterial = new THREE.LineBasicMaterial({
 
@@ -136,26 +122,22 @@ for (let i = 0; i < nodes.length - 1; i++) {
     const lineGeometry = new THREE.BufferGeometry().setFromPoints([
 
         nodes[i].position,
-
         nodes[i + 1].position
 
     ]);
 
     const line = new THREE.Line(
-
         lineGeometry,
-
         lineMaterial
-
     );
 
     scene.add(line);
 
 }
 
-
-// MOUSE PARALLAX
-
+/* ==========================================
+   MOUSE PARALLAX
+========================================== */
 
 let mouseX = 0;
 let mouseY = 0;
@@ -168,16 +150,16 @@ document.addEventListener("mousemove", (event) => {
 
 });
 
-
-// ANIMATION
-
+/* ==========================================
+   ANIMATION
+========================================== */
 
 function animate() {
 
     requestAnimationFrame(animate);
 
     particles.rotation.y += 0.0004;
-    particles.rotation.x += 0.0001;
+    particles.rotation.x += 0.00015;
 
     particles.position.y = Math.sin(Date.now() * 0.0003) * 2;
 
@@ -197,7 +179,9 @@ function animate() {
 
 animate();
 
-// RESPONSIVE
+/* ==========================================
+   RESPONSIVE
+========================================== */
 
 window.addEventListener("resize", () => {
 
@@ -206,11 +190,8 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix();
 
     renderer.setSize(
-
         window.innerWidth,
-
         window.innerHeight
-
     );
 
 });

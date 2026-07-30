@@ -1,137 +1,257 @@
-// Weekly Usage Chart
+/* ==========================================
+   DASHBOARD STAT COUNTERS
+========================================== */
 
-const ctx = document.getElementById("usageChart");
+function animateCounter(id, target, duration = 1800) {
 
-if(ctx){
+    const element = document.getElementById(id);
 
-new Chart(ctx,{
+    if (!element) return;
 
-type:"line",
+    let current = 0;
 
-data:{
+    const increment = target / (duration / 16);
 
-labels:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+    const timer = setInterval(() => {
 
-datasets:[{
+        current += increment;
 
-label:"AI Requests",
+        if (current >= target) {
 
-data:[18,29,22,38,41,56,67],
+            current = target;
 
-borderColor:"#43d9ff",
+            clearInterval(timer);
 
-backgroundColor:"rgba(67,217,255,.2)",
+        }
 
-fill:true,
+        element.textContent = Math.floor(current);
 
-tension:.4
-
-}]
-
-},
-
-options:{
-
-responsive:true,
-
-plugins:{
-
-legend:{
-
-labels:{
-
-color:"white"
+    }, 16);
 
 }
 
+animateCounter("requests", 2847);
+animateCounter("tasks", 946);
+
+
+/* ==========================================
+   CHART.JS GRAPH
+========================================== */
+
+const chartCanvas = document.getElementById("usageChart");
+
+if (chartCanvas) {
+
+    new Chart(chartCanvas, {
+
+        type: "line",
+
+        data: {
+
+            labels: [
+
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun"
+
+            ],
+
+            datasets: [{
+
+                label: "AI Requests",
+
+                data: [22, 35, 41, 58, 64, 82, 96],
+
+                borderColor: "#4fdfff",
+
+                backgroundColor: "rgba(79,223,255,.15)",
+
+                fill: true,
+
+                tension: 0.4,
+
+                pointRadius: 5,
+
+                pointBackgroundColor: "#4fdfff"
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    labels: {
+
+                        color: "#ffffff"
+
+                    }
+
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    ticks: {
+
+                        color: "#ffffff"
+
+                    },
+
+                    grid: {
+
+                        color: "rgba(255,255,255,.05)"
+
+                    }
+
+                },
+
+                y: {
+
+                    ticks: {
+
+                        color: "#ffffff"
+
+                    },
+
+                    grid: {
+
+                        color: "rgba(255,255,255,.05)"
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
 }
 
-},
 
-scales:{
+/* ==========================================
+   LIVE AI ACTIVITY
+========================================== */
 
-x:{
+const liveFeed = document.getElementById("liveStatus");
 
-ticks:{color:"white"}
+const activities = [
 
-},
-
-y:{
-
-ticks:{color:"white"}
-
-}
-
-}
-
-}
-
-});
-
-}
-
-// Animated Counters
-
-function counter(id,end){
-
-let current=0;
-
-const element=document.getElementById(id);
-
-const timer=setInterval(()=>{
-
-current++;
-
-element.innerText=current;
-
-if(current>=end){
-
-clearInterval(timer);
-
-}
-
-},20);
-
-}
-
-counter("requests",142);
-
-counter("tasks",87);
-
-// Live AI Feed
-
-const live=document.getElementById("liveStatus");
-
-const logs=[
-
-"Generating professional email...",
-
-"Summarising meeting transcript...",
-
-"Planning today's schedule...",
-
-"Researching market trends...",
-
-"AI Assistant answered a question...",
-
-"Updating productivity metrics..."
+    "Generating professional email...",
+    "Summarising meeting notes...",
+    "Planning weekly schedule...",
+    "Researching company data...",
+    "Creating project report...",
+    "Analysing productivity trends...",
+    "Checking grammar...",
+    "Building presentation outline...",
+    "Optimising workflow...",
+    "Waiting for new requests..."
 
 ];
 
-let index=0;
+function addActivity() {
 
-setInterval(()=>{
+    if (!liveFeed) return;
 
-live.innerHTML=
+    const status = document.createElement("div");
 
-`<div class="status-item">
+    status.className = "status-item";
 
-<span class="pulse"></span>
+    status.innerHTML = `
 
-${logs[index]}
+        <span class="pulse"></span>
 
-</div>`;
+        ${activities[Math.floor(Math.random() * activities.length)]}
 
-index=(index+1)%logs.length;
+    `;
 
-},2500);
+    liveFeed.prepend(status);
+
+    while (liveFeed.children.length > 6) {
+
+        liveFeed.removeChild(liveFeed.lastChild);
+
+    }
+
+}
+
+setInterval(addActivity, 3000);
+
+
+/* ==========================================
+   LIVE PRODUCTIVITY SCORE
+========================================== */
+
+const scoreCard = document.querySelector(".stat-card:nth-child(3) h2");
+
+if (scoreCard) {
+
+    setInterval(() => {
+
+        const score = 95 + Math.floor(Math.random() * 5);
+
+        scoreCard.textContent = score + "%";
+
+    }, 4000);
+
+}
+
+
+/* ==========================================
+   LIVE RESPONSE TIME
+========================================== */
+
+const responseCard = document.querySelector(".stat-card:nth-child(4) h2");
+
+if (responseCard) {
+
+    setInterval(() => {
+
+        const time = (0.8 + Math.random()).toFixed(1);
+
+        responseCard.textContent = time + "s";
+
+    }, 2500);
+
+}
+
+
+/* ==========================================
+   RANDOMLY INCREASE COUNTERS
+========================================== */
+
+setInterval(() => {
+
+    const requests = document.getElementById("requests");
+    const tasks = document.getElementById("tasks");
+
+    if (requests) {
+
+        requests.textContent = Number(requests.textContent) + Math.floor(Math.random() * 5);
+
+    }
+
+    if (tasks) {
+
+        tasks.textContent = Number(tasks.textContent) + Math.floor(Math.random() * 2);
+
+    }
+
+}, 5000);

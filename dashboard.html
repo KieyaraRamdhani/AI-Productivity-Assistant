@@ -4,330 +4,355 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Nemo AI Dashboard">
 
     <title>Nemo | Dashboard</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/dashboard.js"></script>
-
+    <!-- Favicon -->
     <link rel="icon" href="Assets/images/nemo_logo.png">
 
-    <link rel="stylesheet" href="css/style.css">
-
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 </head>
 
 <body>
 
-<!-- Animated Background -->
+    <!-- Animated Background -->
+    <div id="bg"></div>
 
-<div id="bg"></div>
+    <div class="overlay"></div>
 
-<div class="overlay"></div>
+    <div class="ocean">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
 
-<div class="ocean">
+    <div class="skyline"></div>
 
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
+    <!-- ================= NAVIGATION ================= -->
 
-</div>
+    <header>
 
-<div class="skyline"></div>
+        <nav class="navbar">
 
-<!-- ================= NAVBAR ================= -->
+            <div class="logo">
 
-<header>
+                <img src="Assets/images/nemo_logo.png" alt="Nemo Logo">
 
-<nav class="navbar">
+                <h2>Nemo</h2>
 
-<div class="logo">
+            </div>
 
-<img src="Assets/images/nemo_logo.png" alt="Nemo">
+            <ul class="nav-links">
 
-<h2>Nemo</h2>
+                <li><a href="index.html">Home</a></li>
 
-</div>
+                <li><a href="features.html">Features</a></li>
 
-<ul class="nav-links">
+                <li><a href="about.html">About</a></li>
 
-<li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
 
-<li><a href="features.html">Features</a></li>
+                <li>
 
-<li><a href="about.html">About</a></li>
+                    <a href="dashboard.html" class="active">
 
-<li><a href="contact.html">Contact</a></li>
+                        <i class="fa-solid fa-gauge-high"></i>
 
-<li><a href="dashboard.html" class="active">
+                        Dashboard
 
-<i class="fa-solid fa-gauge-high"></i>
+                    </a>
 
-Dashboard
+                </li>
 
-</a></li>
+            </ul>
 
-</ul>
+        </nav>
 
-</nav>
+    </header>
 
-</header>
+    <!-- ================= MAIN DASHBOARD ================= -->
 
-<!-- ================= DASHBOARD ================= -->
+    <main class="dashboard">
 
-<main class="dashboard">
+        <!-- Dashboard Hero -->
 
-<section class="dashboard-header">
+        <section class="dashboard-header">
 
-<div class="glass">
+            <div class="glass">
 
-<span class="badge">
+                <span class="badge">
 
-<i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user"></i>
 
-Welcome Back
+                    Welcome Back
 
-</span>
+                </span>
 
-<h1>Your AI Workspace</h1>
+                <h1>Your AI Workspace</h1>
 
-<p>
+                <p>
 
-Select an AI application below to start working smarter.
+                    Select an AI application below to streamline your workflow.
+                    Generate emails, organise schedules, summarise meetings,
+                    research topics and improve workplace productivity—all in one place.
 
-Generate emails, organise schedules, summarise meetings,
-research topics and boost workplace productivity.
+                </p>
 
-</p>
+            </div>
 
-</div>
+        </section>
 
-</section>
+        <!-- ================= DASHBOARD OVERVIEW ================= -->
 
-<!-- ================= APPLICATIONS ================= -->
+        <section class="dashboard-overview">
 
-<section class="dashboard-tools">
+            <div class="dashboard-stats">
 
-<h2>Applications</h2>
+                <div class="stat-card">
 
-<div class="dashboard-grid">
+                    <i class="fa-solid fa-bolt"></i>
 
-<a href="apps/email.html" class="dashboard-card">
+                    <h2 id="requests">0</h2>
 
-<i class="fa-solid fa-envelope-circle-check"></i>
+                    <p>AI Requests</p>
 
-<h3>Smart Emails</h3>
-
-<p>Create professional emails instantly.</p>
-
-</a>
-
-<a href="apps/schedule.html" class="dashboard-card">
-
-<i class="fa-solid fa-calendar-days"></i>
-
-<h3>Schedule Planner</h3>
-
-<p>Organise meetings and daily tasks.</p>
-
-</a>
-
-<a href="apps/assistant.html" class="dashboard-card">
-
-<i class="fa-solid fa-robot"></i>
-
-<h3>AI Assistant</h3>
-
-<p>Chat with Nemo's intelligent assistant.</p>
-
-</a>
-
-<a href="apps/notes.html" class="dashboard-card">
-
-<i class="fa-solid fa-file-lines"></i>
-
-<h3>Meeting Notes</h3>
-
-<p>Summarise meetings into clear action items.</p>
-
-</a>
-
-<a href="apps/research.html" class="dashboard-card">
-
-<i class="fa-solid fa-magnifying-glass-chart"></i>
-
-<h3>Research</h3>
-
-<p>Generate research summaries and insights.</p>
-
-</a>
-
-<a href="apps/productivity.html" class="dashboard-card">
-
-<i class="fa-solid fa-chart-line"></i>
-
-<h3>Productivity</h3>
-
-<p>Track goals and improve performance.</p>
-
-</a>
-
-</div>
-
-</section>
-
-<section class="analytics">
-
-    <div class="analytics-grid">
-
-        <div class="chart-card">
-
-            <h2>
-                <i class="fa-solid fa-chart-line"></i>
-                Weekly AI Usage
-            </h2>
-
-            <canvas id="usageChart"></canvas>
-
-        </div>
-
-        <div class="activity-card">
-
-            <h2>
-                <i class="fa-solid fa-wave-square"></i>
-                Live AI Activity
-            </h2>
-
-            <div id="liveStatus">
-
-                <div class="status-item">
-                    <span class="pulse"></span>
-                    Waiting for requests...
                 </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-check-circle"></i>
+
+                    <h2 id="tasks">0</h2>
+
+                    <p>Tasks Completed</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <h2>98%</h2>
+
+                    <p>Productivity Score</p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <i class="fa-solid fa-stopwatch"></i>
+
+                    <h2>1.2s</h2>
+
+                    <p>Average Response</p>
+
+                </div>
+
+            </div>
+
+            <div class="analytics-grid">
+
+                <!-- Usage Graph -->
+
+                <div class="chart-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        Weekly AI Usage
+
+                    </h2>
+
+                    <canvas id="usageChart"></canvas>
+
+                </div>
+
+                <!-- Live Activity -->
+
+                <div class="activity-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-wave-square"></i>
+
+                        Live AI Activity
+
+                    </h2>
+
+                    <div id="liveStatus">
+
+                        <div class="status-item">
+
+                            <span class="pulse"></span>
+
+                            Waiting for requests...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= APPLICATIONS ================= -->
+
+        <section class="dashboard-tools">
+
+            <h2>Choose an AI Tool</h2>
+
+            <div class="dashboard-grid">
+
+                <a href="apps/email.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+
+                    <h3>Smart Emails</h3>
+
+                    <p>Create professional emails instantly.</p>
+
+                </a>
+
+                <a href="apps/schedule.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <h3>Schedule Planner</h3>
+
+                    <p>Organise meetings and daily tasks.</p>
+
+                </a>
+
+                <a href="apps/assistant.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    <h3>AI Assistant</h3>
+
+                    <p>Chat with Nemo's intelligent assistant.</p>
+
+                </a>
+
+                <a href="apps/notes.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <h3>Meeting Notes</h3>
+
+                    <p>Summarise meetings into clear action items.</p>
+
+                </a>
+
+                <a href="apps/research.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                    <h3>Research</h3>
+
+                    <p>Generate research summaries and insights.</p>
+
+                </a>
+
+                <a href="apps/productivity.html" class="dashboard-card">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h3>Productivity</h3>
+
+                    <p>Track goals and improve performance.</p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- ================= RESPONSIBLE AI ================= -->
+
+        <section class="responsible-ai">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h2>Responsible AI</h2>
+
+            <p>
+
+                Nemo uses Artificial Intelligence to assist workplace productivity.
+                Always review AI-generated content before making important business,
+                financial, legal or professional decisions.
+
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>Nemo</h3>
+
+                <p>
+
+                    AI-powered workplace productivity assistant.
+
+                </p>
+
+            </div>
+
+            <div class="socials">
+
+                <a href="#"><i class="fab fa-github"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
 
             </div>
 
         </div>
 
-    </div>
+        <hr>
 
-</section>
-<section class="dashboard-stats">
+        <p>
 
-    <div class="stat-card">
+            © 2026 Kieyara Ramdhani. All Rights Reserved.
 
-        <i class="fa-solid fa-bolt"></i>
+        </p>
 
-        <h2 id="requests">0</h2>
+    </footer>
 
-        <p>AI Requests</p>
+    <!-- JavaScript -->
 
-    </div>
+    <script src="js/background.js"></script>
 
-    <div class="stat-card">
-
-        <i class="fa-solid fa-check-circle"></i>
-
-        <h2 id="tasks">0</h2>
-
-        <p>Tasks Completed</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <i class="fa-solid fa-gauge-high"></i>
-
-        <h2>98%</h2>
-
-        <p>Productivity Score</p>
-
-    </div>
-
-    <div class="stat-card">
-
-        <i class="fa-solid fa-stopwatch"></i>
-
-        <h2>1.2s</h2>
-
-        <p>Average Response</p>
-
-    </div>
-
-</section>
-
-<!-- ================= RESPONSIBLE AI ================= -->
-
-<section class="responsible-ai">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h2>Responsible AI</h2>
-
-<p>
-
-Always review AI-generated responses before using them
-for business, legal, financial or professional purposes.
-
-</p>
-
-</section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-content">
-
-<div>
-
-<h3>Nemo</h3>
-
-<p>
-
-AI-powered workplace productivity assistant.
-
-</p>
-
-</div>
-
-<div class="socials">
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fa-solid fa-envelope"></i></a>
-
-</div>
-
-</div>
-
-<hr>
-
-<p>
-
-© 2026 Kieyara Ramdhani. All Rights Reserved.
-
-</p>
-
-</footer>
-
-<script src="js/background.js"></script>
-
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
 
 </body>
 
