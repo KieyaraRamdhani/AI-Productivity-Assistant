@@ -1,0 +1,252 @@
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard{
+
+    width:92%;
+    max-width:1400px;
+    margin:40px auto 80px;
+
+}
+
+.dashboard-header{
+
+    margin-bottom:60px;
+
+}
+
+.dashboard-header .glass{
+
+    padding:60px;
+
+    text-align:center;
+
+}
+
+.dashboard-header h1{
+
+    font-size:3rem;
+
+    margin:20px 0;
+
+}
+
+.dashboard-header p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:var(--text);
+
+}
+
+/* ==========================================
+   APPLICATION GRID
+========================================== */
+
+.dashboard-tools h2{
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+
+}
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.dashboard-card{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--secondary);
+
+    box-shadow:0 20px 40px rgba(0,170,255,.3);
+
+}
+
+.dashboard-card i{
+
+    font-size:3rem;
+
+    color:var(--secondary);
+
+    margin-bottom:20px;
+
+}
+
+.dashboard-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.dashboard-card p{
+
+    color:var(--text);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+   QUICK STATS
+========================================== */
+
+.dashboard-stats{
+
+    margin:80px 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.stat-card h2{
+
+    color:var(--secondary);
+
+    font-size:2.5rem;
+
+}
+
+.stat-card p{
+
+    margin-top:10px;
+
+    color:var(--text);
+
+}
+
+.analytics{
+
+    margin:70px 0;
+
+}
+
+.analytics-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+}
+
+.chart-card,
+.activity-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.chart-card canvas{
+
+    margin-top:20px;
+
+}
+
+.status-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.pulse{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#3fd2ff;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(2);
+
+        opacity:0;
+
+    }
+
+}
