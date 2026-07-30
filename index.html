@@ -13,7 +13,7 @@
     <!-- Favicon -->
     <link rel="icon" href="Assets/images/nemo_logo.png">
 
-    <!-- Google Font -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -29,21 +29,19 @@
 
 <body>
 
-    <!-- Animated Background -->
+    <!-- ================= BACKGROUND ================= -->
+
     <div id="bg"></div>
+
     <div class="overlay"></div>
 
     <div class="ocean">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
 
-    <div class="wave wave1"></div>
-
-    <div class="wave wave2"></div>
-
-    <div class="wave wave3"></div>
-
-</div>
-
-<div class="skyline"></div>
+    <div class="skyline"></div>
 
     <!-- ================= HEADER ================= -->
 
@@ -52,11 +50,8 @@
         <nav class="navbar">
 
             <div class="logo">
-
                 <img src="Assets/images/nemo_logo.png" alt="Nemo Logo">
-
                 <h2>Nemo</h2>
-
             </div>
 
             <ul class="nav-links">
@@ -69,13 +64,14 @@
 
                 <li><a href="contact.html">Contact</a></li>
 
-                <li><a href="dashboard.html"><i class="fa-solid fa-gauge-high"></i>Dashboard</a>
-
-</li>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        Dashboard
+                    </a>
+                </li>
 
             </ul>
-
-</li>
 
         </nav>
 
@@ -83,278 +79,257 @@
 
     <!-- ================= HERO ================= -->
 
-<main>
+    <main>
 
-    <section class="hero">
+        <section class="hero">
 
-        <div class="hero-layout">
+            <div class="hero-layout">
 
-            <!-- ================= LEFT SIDE ================= -->
+                <!-- LEFT PANEL -->
 
-            <div class="glass">
+                <div class="glass">
 
-                <span class="badge">
+                    <span class="badge">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        AI Workplace Productivity Assistant
+                    </span>
 
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <img src="Assets/images/nemo_logo.png"
+                        alt="Nemo Logo"
+                        class="hero-logo">
 
-                    AI Workplace Productivity Assistant
+                    <h1>
+                        Work Smarter.<br>
+                        Let Nemo Handle the Rest.
+                    </h1>
 
-                </span>
+                    <h2>Intelligent AI for Modern Businesses</h2>
 
-                <img src="Assets/images/nemo_logo.png"
-                     class="hero-logo"
-                     alt="Nemo Logo">
+                    <p>
+                        Nemo helps professionals streamline everyday work by generating
+                        emails, summarising meetings, organising schedules, researching
+                        information and providing an intelligent AI assistant—all from
+                        one modern workspace.
+                    </p>
 
-                <h1>
+                    <div class="hero-buttons">
 
-                    Work Smarter.<br>
-                    Let Nemo Handle the Rest.
+                        <a href="dashboard.html" class="primary-btn">
+                            <i class="fa-solid fa-rocket"></i>
+                            Launch Dashboard
+                        </a>
 
-                </h1>
+                        <a href="about.html" class="secondary-btn">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Learn More
+                        </a>
 
-                <h2>
+                    </div>
 
-                    Intelligent AI for Modern Businesses
+                </div>
 
-                </h2>
+                <!-- RIGHT PANEL -->
 
-                <p>
+                <aside class="applications">
 
-                    Nemo helps professionals streamline everyday work by generating
-                    emails, summarising meetings, planning schedules, researching
-                    information and providing an intelligent AI assistant—all from
-                    one workspace.
+                    <h2>Choose an AI Tool</h2>
 
-                </p>
+                    <div class="tool-list">
 
-                <div class="hero-buttons">
+                        <a href="dashboard.html?tool=email" class="tool-item">
 
-                    <a href="dashboard.html" class="primary-btn">
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-envelope-circle-check"></i>
+                            </div>
 
-                        <i class="fa-solid fa-rocket"></i>
+                            <div class="tool-info">
+                                <h3>Smart Emails</h3>
+                                <p>Create polished professional emails instantly.</p>
+                            </div>
 
-                        Launch Dashboard
+                            <i class="fa-solid fa-chevron-right arrow"></i>
 
-                    </a>
+                        </a>
 
-                    <a href="about.html" class="secondary-btn">
+                        <a href="dashboard.html?tool=schedule" class="tool-item">
 
-                        <i class="fa-solid fa-circle-info"></i>
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
 
-                        Learn More
+                            <div class="tool-info">
+                                <h3>Schedule Planner</h3>
+                                <p>Plan meetings and manage your day.</p>
+                            </div>
 
-                    </a>
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+
+                        </a>
+
+                        <a href="dashboard.html?tool=assistant" class="tool-item">
+
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+
+                            <div class="tool-info">
+                                <h3>AI Assistant</h3>
+                                <p>Chat with your intelligent workplace assistant.</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+
+                        </a>
+
+                        <a href="dashboard.html?tool=notes" class="tool-item">
+
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+
+                            <div class="tool-info">
+                                <h3>Meeting Notes</h3>
+                                <p>Summarise meetings in seconds.</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+
+                        </a>
+
+                        <a href="dashboard.html?tool=research" class="tool-item">
+
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+
+                            <div class="tool-info">
+                                <h3>Research</h3>
+                                <p>Find reliable workplace insights quickly.</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+
+                        </a>
+
+                        <a href="dashboard.html?tool=productivity" class="tool-item">
+
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div class="tool-info">
+                                <h3>Productivity</h3>
+                                <p>Track performance and improve efficiency.</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right arrow"></i>
+
+                        </a>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!-- ================= HOW NEMO WORKS ================= -->
+
+        <section class="workflow">
+
+            <h2>How Nemo Works</h2>
+
+            <div class="workflow-grid">
+
+                <div class="workflow-card">
+
+                    <i class="fa-solid fa-pen"></i>
+
+                    <h3>Describe Your Task</h3>
+
+                    <p>Tell Nemo what you need help with.</p>
+
+                </div>
+
+                <div class="workflow-card">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <h3>AI Processing</h3>
+
+                    <p>Nemo analyses your request using AI.</p>
+
+                </div>
+
+                <div class="workflow-card">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <h3>Receive Results</h3>
+
+                    <p>Get professional AI-generated content instantly.</p>
 
                 </div>
 
             </div>
 
-            <!-- ================= RIGHT SIDE ================= -->
+        </section>
 
-            <div class="applications">
+        <!-- ================= RESPONSIBLE AI ================= -->
 
-                <h2>Choose an AI Tool</h2>
+        <section class="responsible-ai">
 
-                <div class="tool-list">
+            <i class="fa-solid fa-shield-halved"></i>
 
-                    <a href="dashboard.html?tool=email" class="tool-item">
+            <h2>Responsible AI</h2>
 
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-envelope-circle-check"></i>
-                        </div>
+            <p>
+                Nemo uses Artificial Intelligence to assist workplace productivity.
+                Always review AI-generated content before making important
+                business, legal or financial decisions.
+            </p>
 
-                        <div class="tool-info">
-                            <h3>Smart Emails</h3>
-                            <p>Create polished professional emails in seconds.</p>
-                        </div>
+        </section>
 
-                        <i class="fa-solid fa-chevron-right arrow"></i>
+    </main>
 
-                    </a>
+    <!-- ================= FOOTER ================= -->
 
-                    <a href="dashboard.html?tool=schedule" class="tool-item">
+    <footer>
 
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </div>
+        <div class="footer-content">
 
-                        <div class="tool-info">
-                            <h3>Schedule Planner</h3>
-                            <p>Organise meetings and optimise your day.</p>
-                        </div>
+            <div>
 
-                        <i class="fa-solid fa-chevron-right arrow"></i>
+                <h3>Nemo</h3>
 
-                    </a>
+                <p>AI-powered workplace productivity assistant.</p>
 
-                    <a href="dashboard.html?tool=assistant" class="tool-item">
+            </div>
 
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
+            <div class="socials">
 
-                        <div class="tool-info">
-                            <h3>AI Assistant</h3>
-                            <p>Your personalised workplace chatbot.</p>
-                        </div>
+                <a href="#"><i class="fab fa-github"></i></a>
 
-                        <i class="fa-solid fa-chevron-right arrow"></i>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
 
-                    </a>
-
-                    <a href="dashboard.html?tool=notes" class="tool-item">
-
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-file-lines"></i>
-                        </div>
-
-                        <div class="tool-info">
-                            <h3>Meeting Notes</h3>
-                            <p>Summarise lengthy meetings instantly.</p>
-                        </div>
-
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-
-                    </a>
-
-                    <a href="dashboard.html?tool=research" class="tool-item">
-
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        </div>
-
-                        <div class="tool-info">
-                            <h3>Research</h3>
-                            <p>Gather workplace insights faster with AI.</p>
-                        </div>
-
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-
-                    </a>
-
-                    <a href="dashboard.html?tool=productivity" class="tool-item">
-
-                        <div class="tool-icon">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-
-                        <div class="tool-info">
-                            <h3>Productivity</h3>
-                            <p>Track progress and improve workplace efficiency.</p>
-                        </div>
-
-                        <i class="fa-solid fa-chevron-right arrow"></i>
-
-                    </a>
-
-                </div>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
 
             </div>
 
         </div>
 
-    </section>
+        <hr>
 
-</main>
+        <p>
+            © 2026 Kieyara Ramdhani. All Rights Reserved.
+        </p>
 
-    <section class="workflow">
-
-<h2>How Nemo Works</h2>
-
-<div class="workflow-grid"><div>
-
-    <i class="fa-solid fa-pen"></i>
-
-<h3>Describe Your Task</h3>
-
-<p>Tell Nemo what you need help with.</p>
-
-</div>
-
-<div>
-
-<i class="fa-solid fa-microchip"></i>
-
-<h3>AI Processing</h3>
-
-<p>Nemo analyses your request.</p>
-
-</div>
-
-<div>
-
-<i class="fa-solid fa-check"></i>
-
-<h3>Receive Results</h3>
-
-<p>Professional AI-generated content instantly.</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="responsible-ai">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h2>Responsible AI</h2>
-
-<p>
-
-Nemo uses Artificial Intelligence to assist with workplace
-productivity.
-
-Always review AI-generated content before making
-business, legal or financial decisions.
-
-</p>
-
-</section>
-
-    <!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-content">
-
-<div>
-
-<h3>Nemo</h3>
-
-<p>
-
-AI-powered workplace productivity assistant.
-
-</p>
-
-</div>
-
-<div class="socials">
-
-<a href="#"><i class="fab fa-github"></i></a>
-
-<a href="#"><i class="fab fa-linkedin"></i></a>
-
-<a href="#"><i class="fa-solid fa-envelope"></i></a>
-
-</div>
-
-</div>
-
-<hr>
-
-<p>
-
-© 2026 Kieyara Ramdhani.
-All Rights Reserved.
-
-</p>
-
-</footer>
+    </footer>
 
     <!-- JavaScript -->
+
     <script src="js/background.js"></script>
     <script src="js/main.js"></script>
 
